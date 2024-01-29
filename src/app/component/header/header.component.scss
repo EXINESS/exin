@@ -1,0 +1,73 @@
+@use "../../../style/variable" as *;
+@use "../../../style/mixin" as *;
+
+header {
+  @include flex();
+
+  inline-size: 100%;
+
+  padding: 0.6rem;
+
+  background: $white;
+
+  box-shadow: 0 0.5rem 1.4rem $grey;
+
+  div {
+    @include flex();
+    gap: 8rem;
+
+    @include width();
+
+    .menu-icon {
+      @include flex();
+
+      display: none;
+
+      background-color: $transparent;
+
+      border: 0;
+
+      font-size: 2.4rem;
+    }
+
+    img {
+      inline-size: 5.6rem;
+      block-size: 5.6rem;
+    }
+
+    ul {
+      @include flex();
+
+      li a {
+        display: inline-block;
+
+        padding: 2rem 3rem;
+
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  div.noMenu {
+    justify-content: flex-start;
+
+    padding-inline-start: 15rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  header {
+    .menu-icon {
+      display: block !important;
+    }
+
+    .hasMenu{
+      justify-content: space-between;
+    }
+
+    ul {
+      display: none !important;
+    }
+  }
+}

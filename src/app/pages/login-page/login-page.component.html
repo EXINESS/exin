@@ -1,0 +1,49 @@
+<app-header [menu]="menu"></app-header>
+
+<div class="box">
+  <div class="container">
+
+    <img ngSrc="/assets/image/unlocking.webp" alt="unlocking image" width="670" height="518" priority="1" class="unlock">
+
+    <div class="login">
+
+      <div class="back-one"></div>
+
+      <div class="back-two"></div>
+
+      <img ngSrc="/assets/image/EXIN.webp" alt="EXIN logo" width="260" height="260" priority="1">
+
+      <b>خوش آمدید</b>
+
+      <p>اکسینس تحولی در بیزینس</p>
+
+      <form (ngSubmit)="login()">
+        <div>
+          <label for="email">ایمیل</label>
+          <input id="email" type="email">
+        </div>
+
+        <div class="password-box">
+          <label for="password">رمز عبور</label>
+          <input id="password" [type]="isShow ? 'text' : 'password'">
+          <button *ngIf="isShow" (click)="changeType()"><i class="fa-regular fa-eye"></i></button>
+          <button *ngIf="!isShow" (click)="changeType()"><i class="fa-regular fa-eye-slash"></i></button>
+        </div>
+
+        <button [disabled]="isLogin" type="submit">
+          ورود
+          <span *ngIf="isLoading"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+        </button>
+      </form>
+
+      <hr>
+
+      <button class="login-google" >ورود با حساب گوگل <img ngSrc="assets/image/Google-Icon.webp" alt="google icon" height="2" width="2" class="google-icon" priority="1"></button>
+
+      <div class="signup">
+        <p>آیا حساب کاربری ندارید؟</p>
+        <a href="#">ثبت نام</a>
+      </div>
+    </div>
+  </div>
+</div>

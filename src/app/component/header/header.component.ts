@@ -9,9 +9,15 @@ import {menuItem} from '../models/menuItem';
 
 export class HeaderComponent {
   @Input() public menu: menuItem[] = []
-  public isShow: boolean = this.menu.length == 0;
+  public hasMenu: boolean = this.menu.length == 0;
+
+  public isShow: boolean = false;
 
   public identify(index: number, item: menuItem): number {
     return item.id;
   };
+
+  public showMenu(): void {
+    this.isShow = !this.isShow;
+  }
 }

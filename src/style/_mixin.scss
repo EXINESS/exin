@@ -1,0 +1,10 @@
+@mixin width {
+  inline-size: min(95%, 102.4rem);
+}
+
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}

@@ -1,0 +1,111 @@
+@use "../../../style/variable" as *;
+@use "../../../style/mixin" as *;
+
+header {
+  @include flex();
+
+  inline-size: 100%;
+
+  padding: 0.6rem;
+
+  background: $white;
+
+  box-shadow: 0 0.5rem 1.4rem $grey;
+
+  div {
+    @include flex();
+    gap: 8rem;
+
+    @include width();
+
+    .menu-icon {
+      @include flex();
+
+      display: none;
+
+      background-color: $transparent;
+
+      border: 0;
+
+      font-size: 2.4rem;
+    }
+
+    img {
+      inline-size: 5.6rem;
+      block-size: 5.6rem;
+    }
+
+    ul {
+      @include flex();
+
+      li a {
+        display: inline-block;
+
+        padding: 2rem 3rem;
+
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  div.noMenu {
+    justify-content: flex-start;
+
+    padding-inline-start: 15rem;
+  }
+}
+
+div.dark {
+  block-size: calc(100% - 7.4rem);
+
+  position: absolute;
+  top: 7.4rem;
+  left: 0;
+  right: 0;
+
+  background-color: $grey-transparent;
+
+  z-index: 1;
+  display: none;
+}
+
+@media only screen and (max-width: 992px) {
+  header {
+    .menu-icon {
+      display: block !important;
+    }
+
+    .hasMenu {
+      justify-content: space-between;
+    }
+
+    ul {
+      flex-direction: column !important;
+
+      block-size: calc(100vh - 7.4rem);
+
+      background-color: $white;
+
+      position: absolute;
+      top: 7.4rem;
+      right: -13rem;
+
+      box-shadow: -1.4rem 0.5rem 1.4rem $grey;
+
+      z-index: 2;
+
+      transition: 0.25s linear;
+
+      &.show {
+        right: 0;
+        transition: 0.25s linear;
+
+      }
+    }
+  }
+
+  div.show {
+    display: block;
+  }
+}

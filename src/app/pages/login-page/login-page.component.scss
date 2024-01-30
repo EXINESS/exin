@@ -1,0 +1,212 @@
+@use "../../../style/mixin" as *;
+@use "../../../style/variable" as *;
+
+.box {
+  @include flex();
+
+  .container {
+    @include flex();
+    gap: 2rem;
+
+    @include width();
+    block-size: calc(100vh - 7.7rem);
+
+
+    .unlock {
+      flex: 6;
+
+      inline-size: 0;
+      block-size: auto;
+    }
+
+    .login {
+      @include flex($direction: column);
+      flex: 4;
+
+      background-color: $white;
+
+      padding: 2.4rem;
+
+      border-radius: 2rem;
+
+      position: relative;
+
+      img {
+        block-size: 12rem;
+        inline-size: 12rem;
+      }
+
+      b {
+        color: $dark-grey;
+        font-size: 2.4rem;
+        font-weight: 600;
+      }
+
+      p {
+        color: $dark-white;
+        font-size: 1.4rem;
+      }
+
+      form {
+        @include flex($direction: column, $align: flex-start);
+        gap: 2.4rem;
+
+        inline-size: 100%;
+
+        div {
+          inline-size: 100%;
+
+          label {
+            padding-top: 1.4rem;
+
+            color: $light-black;
+            font-size: 1.2rem;
+            font-weight: 600;
+          }
+
+          input {
+            block-size: 4.2rem;
+            inline-size: 100%;
+
+            background-color: $light-white;
+
+            border-radius: 1rem;
+            border: 0.2rem solid $light-grey;
+
+            padding: 0.25rem 1rem;
+
+            direction: ltr;
+
+            &:focus-visible {
+              outline-color: $blue;
+            }
+
+            &:invalid {
+              outline-color: $red;
+            }
+          }
+        }
+
+        .password-box {
+          position: relative;
+
+          button {
+            @include flex();
+
+            block-size: 4.2rem;
+            inline-size: 4.2rem;
+
+            background-color: $transparent;
+
+            border: 0;
+
+            color: $dark-white;
+
+            position: absolute;
+            bottom: 0;
+            right: 0;
+          }
+        }
+
+        button[type='submit'] {
+          @include flex();
+          gap: 0.8rem;
+
+          inline-size: 100%;
+          block-size: 4.2rem;
+
+          border-radius: 1rem;
+
+          background-color: $dark-black;
+
+          color: $white;
+          font-size: 1.4rem;
+          font-weight: 700;
+        }
+      }
+
+      .back-one {
+        position: absolute;
+
+        border-radius: 63.8523rem;
+        background: linear-gradient(143deg, #6100FF 8.37%, rgba(0, 255, 255, 0.00) 91.49%);
+        filter: blur(100px);
+
+
+        width: 75%;
+        height: 75%;
+        z-index: -1;
+      }
+
+      .back-two {
+        position: absolute;
+
+        background: linear-gradient(143deg, hsla(212, 100%, 50%, 1) 8.37%, rgba(0, 255, 255, 0.00) 91.49%);
+        filter: blur(100px);
+
+        width: 75%;
+        height: 75%;
+        z-index: -1;
+
+        transform: rotate(151.57deg);
+      }
+
+      hr {
+        inline-size: 100%;
+
+        border: 0.1rem dotted $white;
+        background: linear-gradient($white, $white) padding-box,
+        linear-gradient(92.35deg, $transparent, $dark-white, $transparent) border-box;
+
+        margin: 2rem 0;
+      }
+
+      .login-google {
+        @include flex();
+        gap: 1rem;
+
+        inline-size: 100%;
+        block-size: 4.8rem;
+
+        background-color: $transparent;
+        border: 0.3rem solid $dark-white;
+
+        border-radius: 1rem;
+
+        color: $dark-black;
+        font-size: 1.2rem;
+        font-weight: 600;
+
+        .google-icon {
+          inline-size: 2rem;
+          block-size: 2rem;
+        }
+      }
+
+      .signup {
+        @include flex();
+        gap: 1rem;
+
+        padding-top: 2rem;
+
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    max-inline-size: 40rem;
+
+    .unlock {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .unlock {
+    display: none;
+  }
+}

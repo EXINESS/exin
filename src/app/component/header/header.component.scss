@@ -12,6 +12,9 @@ header {
 
   box-shadow: 0 0.5rem 1.4rem $grey;
 
+  position: relative;
+  z-index: 3;
+
   div {
     @include flex();
     gap: 8rem;
@@ -57,10 +60,10 @@ header {
 }
 
 div.dark {
-  block-size: calc(100% - 7.4rem);
 
   position: absolute;
-  top: 7.4rem;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
 
@@ -72,6 +75,11 @@ div.dark {
 
 @media only screen and (max-width: 992px) {
   header {
+
+    &.show {
+      position: fixed;
+    }
+
     .menu-icon {
       display: block !important;
     }
@@ -107,5 +115,7 @@ div.dark {
 
   div.show {
     display: block;
+
+    position: fixed;
   }
 }

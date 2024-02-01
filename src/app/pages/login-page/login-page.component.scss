@@ -116,6 +116,7 @@
           block-size: 4.2rem;
 
           border-radius: 1rem;
+          border: 0;
 
           background-color: $dark-black;
 
@@ -144,7 +145,7 @@
         background: linear-gradient(143deg, hsla(212, 100%, 50%, 1) 8.37%, rgba(0, 255, 255, 0.00) 91.49%);
         filter: blur(100px);
 
-        width: 75%;
+        width: 40%;
         height: 75%;
         z-index: -1;
 
@@ -196,17 +197,19 @@
 }
 
 @media only screen and (max-width: 992px) {
-  .container {
-    max-inline-size: 40rem;
+  .box {
+    block-size: inherit;
 
-    .unlock {
-      display: none;
+    .container {
+      max-inline-size: 40rem;
+
+      block-size: inherit;
+
+      padding: 5rem 0;
+
+      .unlock {
+        display: none;
+      }
     }
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .unlock {
-    display: none;
   }
 }

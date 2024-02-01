@@ -1,4 +1,4 @@
-<header>
+<header [ngClass]="isShow ? 'show' : ''">
   <div [ngClass]="hasMenu ? 'hasMenu' : 'noMenu'">
 
     <button *ngIf="hasMenu" class="menu-icon" (click)="showMenu()">

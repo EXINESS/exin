@@ -1,4 +1,4 @@
-@mixin width {
+@mixin width() {
   inline-size: min(95%, 102.4rem);
 }
 

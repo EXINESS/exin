@@ -24,6 +24,7 @@ export class LoginPageComponent {
   public login(): void {
     this.isLogin = true;
     this.isLoading = true;
+
     setTimeout((): void => {
       this.isLogin = false;
       this.isLoading = false;

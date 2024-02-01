@@ -62,10 +62,10 @@ header {
 div.dark {
 
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
 
   background-color: $grey-transparent;
 
@@ -96,8 +96,8 @@ div.dark {
       background-color: $white;
 
       position: absolute;
-      top: 7.4rem;
-      right: -13rem;
+      inset-block-start: 7.4rem;
+      inset-inline-start: -13rem;
 
       box-shadow: -1.4rem 0.5rem 1.4rem $grey;
 
@@ -106,7 +106,7 @@ div.dark {
       transition: 0.25s linear;
 
       &.show {
-        right: 0;
+        inset-inline-start: 0;
         transition: 0.25s linear;
 
       }

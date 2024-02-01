@@ -57,7 +57,7 @@
           inline-size: 100%;
 
           label {
-            padding-top: 1.4rem;
+            padding-block-start: 1.4rem;
 
             color: $light-black;
             font-size: 1.2rem;
@@ -103,8 +103,8 @@
             color: $dark-white;
 
             position: absolute;
-            bottom: 0;
-            right: 0;
+            inset-block-end: 0;
+            inset-inline-end: 0;
           }
         }
 
@@ -134,8 +134,8 @@
         filter: blur(100px);
 
 
-        width: 75%;
-        height: 75%;
+        inline-size: 75%;
+        block-size: 75%;
         z-index: -1;
       }
 
@@ -145,8 +145,8 @@
         background: linear-gradient(143deg, hsla(212, 100%, 50%, 1) 8.37%, rgba(0, 255, 255, 0.00) 91.49%);
         filter: blur(100px);
 
-        width: 40%;
-        height: 75%;
+        inline-size: 40%;
+        block-size: 75%;
         z-index: -1;
 
         transform: rotate(151.57deg);
@@ -188,7 +188,7 @@
         @include flex();
         gap: 1rem;
 
-        padding-top: 2rem;
+        padding-block-start: 2rem;
 
         font-size: 1.4rem;
       }

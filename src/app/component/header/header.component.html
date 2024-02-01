@@ -1,7 +1,6 @@
 <header [ngClass]="isShow ? 'show' : ''">
-  <div [ngClass]="hasMenu ? 'hasMenu' : 'noMenu'">
-
-    <button *ngIf="hasMenu" class="menu-icon" (click)="showMenu()">
+  <div [ngClass]="menu.length>0 ? 'hasMenu' : 'noMenu'">
+    <button *ngIf="menu.length>0" class="menu-icon" (click)="showMenu()">
       <i class="fa-solid fa-bars"></i>
     </button>
 
@@ -9,7 +8,7 @@
       <img ngSrc="assets/image/EXIN.webp" alt="EXIN logo" width="260" height="260" priority="1">
     </a>
 
-    <ul *ngIf="hasMenu" [ngClass]="isShow ? 'show' : ''">
+    <ul *ngIf="menu.length>0" [ngClass]="isShow ? 'show' : ''">
       <li *ngFor="let item of menu; trackBy: identify">
         <a [routerLink]="item.link">{{item.title}}</a>
       </li>

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {menuItem} from "../../component/models/menuItem";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-page',
@@ -7,13 +7,7 @@ import {menuItem} from "../../component/models/menuItem";
   styleUrl: './login-page.component.scss'
 })
 export class LoginPageComponent {
-  public menu: menuItem[] = [
-    {id: 0, title: "اشتراک ویژه", link: '/'},
-    {id: 1, title: "افزونه‌ها", link: '/'},
-    {id: 2, title: "آموزش", link: '/'},
-    {id: 3, title: "درباره ما", link: '/'},
-    {id: 4, title: "درخواست مشاوره", link: '/'},
-  ]
+  constructor(private router : Router) {}
 
   public isShow: boolean = false;
 
@@ -28,6 +22,7 @@ export class LoginPageComponent {
     setTimeout((): void => {
       this.isLogin = false;
       this.isLoading = false;
+      this.router.navigate(['/dashboard']);
     }, 2000);
   }
 

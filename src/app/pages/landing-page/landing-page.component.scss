@@ -4,7 +4,7 @@
 section {
   @include flex($direction: column);
 
-  block-size: calc(100vh - 9.5rem);
+  block-size: calc(100vh - 11.5rem);
 
   position: relative;
 

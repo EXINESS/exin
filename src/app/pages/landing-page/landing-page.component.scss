@@ -1,0 +1,22 @@
+@use "../../../style/mixin" as *;
+@use "../../../style/variable" as *;
+
+section {
+  @include flex($direction: column);
+
+  block-size: calc(100vh - 7.7rem);
+
+  div{
+    @include flex($direction: column);
+
+    img {
+      inline-size: 37.6rem;
+    }
+
+    h1 {
+      font-weight: 500;
+      font-size: 3.6rem;
+      color: $dark-blue;
+    }
+  }
+}

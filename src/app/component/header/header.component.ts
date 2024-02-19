@@ -18,6 +18,4 @@ export class HeaderComponent {
   public showMenu(): void {
     this.isShow = !this.isShow;
   }
-
-  protected readonly HashChangeEvent = HashChangeEvent;
 }

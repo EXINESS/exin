@@ -2,7 +2,9 @@
 
 @font-face {
   font-family: Ravi;
-  src: url('assets/font/Ravi.ttf');
+  src: url('assets/font/Ravi.woff') format('woff'),
+  url('assets/font/Ravi.ttf') format('truetype'),
+  url('assets/font/Ravi.eot') format('opentype');
 }
 
 *, *:before, *:after {

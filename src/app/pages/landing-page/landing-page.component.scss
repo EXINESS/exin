@@ -6,17 +6,59 @@ section {
 
   block-size: calc(100vh - 7.7rem);
 
-  div{
+  position: relative;
+
+  div {
     @include flex($direction: column);
 
-    img {
-      inline-size: 37.6rem;
+
+    &.bottom {
+      position: absolute;
+      bottom: 2rem;
+
+      svg {
+        position: absolute;
+      }
+
+      .noblur {
+        position: absolute;
+        animation: rotation 5s infinite linear;
+      }
+
+      img:last-child {
+        position: relative;
+        animation: reverseRotation 5s infinite linear;
+        filter: blur(0.5rem);
+      }
     }
 
-    h1 {
-      font-weight: 500;
-      font-size: 3.6rem;
-      color: $dark-blue;
-    }
+  }
+
+  .logo {
+    inline-size: 37.6rem;
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 3.6rem;
+    color: $dark-blue;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes reverseRotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-359deg);
   }
 }

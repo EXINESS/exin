@@ -13,5 +13,7 @@ export class DashboardPageComponent {
     {id: 2, title: "آموزش", link: '/'},
     {id: 3, title: "درباره ما", link: '/'},
     {id: 4, title: "درخواست مشاوره", link: '/'},
-  ]
+  ];
+
+  public activeNumber: number = 8;
 }

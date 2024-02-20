@@ -36,6 +36,12 @@ header {
     img {
       inline-size: 5.6rem;
       block-size: 5.6rem;
+
+      &.right {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
     }
 
     ul {
@@ -88,7 +94,7 @@ div.dark {
       justify-content: space-between;
     }
 
-    ul {
+    .leftmenu {
       flex-direction: column !important;
 
       block-size: calc(100vh - 7.4rem);

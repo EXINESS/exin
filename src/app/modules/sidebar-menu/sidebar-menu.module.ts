@@ -5,9 +5,7 @@ import {RouterLink} from "@angular/router";
 
 @NgModule({
   declarations: [SidebarMenuComponent],
-  exports: [
-    SidebarMenuComponent
-  ],
+  exports: [SidebarMenuComponent],
   imports: [CommonModule, RouterLink]
 })
 export class SidebarMenuModule { }

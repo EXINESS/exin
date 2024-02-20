@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-menu',
@@ -6,4 +6,5 @@ import {Component} from '@angular/core';
   styleUrl: './sidebar-menu.component.scss'
 })
 export class SidebarMenuComponent {
+  @Input() public activeItem: number = 0;
 }

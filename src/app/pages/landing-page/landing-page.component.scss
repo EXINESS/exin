@@ -10,7 +10,11 @@ section {
 
   div {
     @include flex($direction: column);
+    gap: 2rem;
 
+    h1 {
+      font-size: 2.6rem;
+    }
 
     &.bottom {
       position: absolute;

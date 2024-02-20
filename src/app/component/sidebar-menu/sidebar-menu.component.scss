@@ -14,11 +14,13 @@ ul {
 
   border-radius: 4rem 0 0 4rem;
 
+  background-color: $white;
+
   li {
     a.active svg {
       fill: $black;
     }
-    
+
     svg {
 
       fill: $grey-transparent;

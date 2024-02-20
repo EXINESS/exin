@@ -1,0 +1,185 @@
+.main {
+  position: relative;
+  padding: 2rem 8rem 0 2rem;
+  background-color: white;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .pen{
+      position: absolute;
+      width: 1.8rem;
+      height: 1.8rem;
+      top: 3rem;
+    }
+
+    textarea {
+      display: block;
+      height: 12rem;
+      border: 0;
+      padding: 1rem 2.4rem;
+
+      &:focus-visible{
+        outline: 0;
+      }
+    }
+
+    .btn{
+      align-items: flex-end;
+    }
+
+    button {
+      border: 0.1rem solid black;
+      border-radius: 0.8rem;
+      color: black;
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      justify-content: center;
+
+      background-color: transparent;
+      padding: 0.4rem 0.8rem;
+
+      width: fit-content;
+
+      cursor: pointer;
+
+      svg{
+        fill: black;
+        height: 1.2rem;
+        width: 1.2rem;
+      }
+    }
+    hr {
+      border: 0;
+      border-bottom: 0.5rem solid #E0E4F510;
+    }
+
+    h3{
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    ul {
+      li{
+        button {
+          border: 0;
+          padding: 0;
+        }
+
+        .title {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 1rem;
+          padding: 1.8rem 0 1.8rem 3.2rem;
+
+          font-size: 1.4rem;
+          color: black;
+
+
+          svg{
+            height: 1.6rem;
+            width: 1.6rem;
+            transform: rotate(-90deg);
+            transition: 0.25s linear;
+
+            &.rotate{
+              transform: rotate(-180deg);
+              transition: 0.25s linear;
+            }
+          }
+
+          p {
+            padding-top: 0.5rem;
+          }
+
+        }
+
+        ul{
+          padding-right: 1rem;
+          display:flex;
+          flex-direction: column;
+          gap: 1.2rem;
+
+
+
+          li {
+            display: flex;
+            flex-direction: row;
+            gap: 1.4rem;
+
+            font-size: 1.4rem;
+
+            svg{
+              height: 1.6rem;
+              width: 1.6rem;
+
+              fill: black;
+            }
+
+            button{
+              &.red{
+                color: red;
+                svg{
+                  fill: red;
+                }
+              }
+
+              &.green{
+                color: #25cc25;
+                svg{
+                  fill: #25cc25;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dialog {
+  position: fixed;
+  inset: 0;
+  background-color: #00000070;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    input {
+      border-radius: 0.5rem;
+    }
+
+    button {
+      border: 0.1rem solid black;
+
+      background-color: transparent;
+
+      border-radius: 0.5rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+
+      cursor: pointer;
+
+      &.close {
+        border: 0;
+      }
+    }
+  }
+}

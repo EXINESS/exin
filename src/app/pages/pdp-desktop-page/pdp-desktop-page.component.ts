@@ -77,4 +77,15 @@ export class PdpDesktopPageComponent implements OnInit {
         }
         localStorage.setItem('works', JSON.stringify(this.works));
     }
+
+    removeItem(id: number) {
+        let index = -1;
+        for(let i=0; i < this.works.length; i++){
+            if(this.works[i].id == id){
+                index = i;
+            }
+        }
+        this.works.splice(index, 1);
+        localStorage.setItem('works', JSON.stringify(this.works));
+    }
 }

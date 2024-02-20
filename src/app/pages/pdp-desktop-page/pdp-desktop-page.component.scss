@@ -7,7 +7,8 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    .pen{
+
+    .pen {
       position: absolute;
       width: 1.8rem;
       height: 1.8rem;
@@ -20,12 +21,12 @@
       border: 0;
       padding: 1rem 2.4rem;
 
-      &:focus-visible{
+      &:focus-visible {
         outline: 0;
       }
     }
 
-    .btn{
+    .btn {
       align-items: flex-end;
     }
 
@@ -45,49 +46,60 @@
 
       cursor: pointer;
 
-      svg{
+      svg {
         fill: black;
         height: 1.2rem;
         width: 1.2rem;
       }
     }
+
     hr {
       border: 0;
       border-bottom: 0.5rem solid #E0E4F510;
     }
 
-    h3{
+    h3 {
       font-weight: bold;
       font-size: 2rem;
     }
 
     ul {
-      li{
+      li {
         button {
           border: 0;
           padding: 0;
         }
 
         .title {
+
+          svg {
+            height: 1.6rem;
+            width: 1.6rem;
+          }
+
           display: flex;
           flex-direction: row;
           align-items: center;
           gap: 1rem;
+          justify-content: space-between;
           padding: 1.8rem 0 1.8rem 3.2rem;
 
           font-size: 1.4rem;
           color: black;
 
+          div {
+            flex-direction: row;
 
-          svg{
-            height: 1.6rem;
-            width: 1.6rem;
-            transform: rotate(-90deg);
-            transition: 0.25s linear;
-
-            &.rotate{
-              transform: rotate(-180deg);
+            svg {
+              height: 1.6rem;
+              width: 1.6rem;
+              transform: rotate(-90deg);
               transition: 0.25s linear;
+
+              &.rotate {
+                transform: rotate(-180deg);
+                transition: 0.25s linear;
+              }
             }
           }
 
@@ -97,12 +109,11 @@
 
         }
 
-        ul{
+        ul {
           padding-right: 1rem;
-          display:flex;
+          display: flex;
           flex-direction: column;
           gap: 1.2rem;
-
 
 
           li {
@@ -112,24 +123,26 @@
 
             font-size: 1.4rem;
 
-            svg{
+            svg {
               height: 1.6rem;
               width: 1.6rem;
 
               fill: black;
             }
 
-            button{
-              &.red{
+            button {
+              &.red {
                 color: red;
-                svg{
+
+                svg {
                   fill: red;
                 }
               }
 
-              &.green{
+              &.green {
                 color: #25cc25;
-                svg{
+
+                svg {
                   fill: #25cc25;
                 }
               }

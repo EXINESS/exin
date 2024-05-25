@@ -1,54 +1,110 @@
 @use "../../../style/mixin" as *;
 @use "../../../style/variable" as *;
 
-section {
-  @include flex($direction: column);
+app-header {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-start: 0;
 
-  block-size: calc(100vh - 11.5rem);
+  z-index: 999;
+}
 
-  position: relative;
+main {
+  @include flex($direction: column, $justify: center);
 
-  div {
-    @include flex($direction: column);
-    gap: 2rem;
+  section {
+    &.banner {
+      @include flex($align: center, $justify: center);
 
-    h1 {
-      font-size: 2.6rem;
+      inline-size: 97vw;
+      overflow: hidden;
+
+      position: relative;
+
+      div {
+        &.box {
+          inline-size: 20%;
+          block-size: 20%;
+
+          position: absolute;
+
+          transition: 4s;
+
+          div {
+            inline-size: 100%;
+            block-size: 100%;
+
+            &:first-child {
+              background-image: linear-gradient(to top right, hsl(212, 100%, 50%), hsla(202, 100%, 50%, 0));
+
+              filter: blur(15rem);
+            }
+
+            &:last-child {
+              background-image: linear-gradient(to top, hsl(263, 100%, 50%), hsla(180, 100%, 50%, 0));
+
+              position: absolute;
+              inset: 0;
+
+              filter: blur(20rem);
+            }
+          }
+        }
+
+        &.container {
+          @include flex($direction: column, $align: center, $justify: center);
+
+          block-size: 100vh;
+          inline-size: min(95%, 102.4rem);
+
+          position: relative;
+
+          div.content {
+            @include flex($direction: column, $gap: 2rem);
+
+            h1 {
+              color: hsl(220, 48%, 14%);
+              font-size: 2.6rem;
+              font-weight: bold;
+            }
+          }
+
+          a {
+            position: absolute;
+            inset-block-end: 0;
+            inset-inline-end: 50%;
+
+            transform: translateX(-50%);
+
+            div {
+              @include flex($align: center, $justify: center);
+
+              & > * {
+                position: absolute;
+              }
+
+              img {
+                &.no-blur {
+                  animation: rotation 5s infinite linear;
+                }
+
+                &:last-child {
+                  position: relative;
+                  animation: reverseRotation 5s infinite linear;
+                  filter: blur(0.5rem);
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
-    &.bottom {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-
-      svg {
-        position: absolute;
-      }
-
-      .noblur {
-        position: absolute;
-        animation: rotation 5s infinite linear;
-      }
-
-      img:last-child {
-        position: relative;
-        animation: reverseRotation 5s infinite linear;
-        filter: blur(0.5rem);
-      }
+    &#module {
+      block-size: 100vh;
     }
-
   }
 
-  .logo {
-    inline-size: 37.6rem;
-  }
-
-  h1 {
-    font-weight: 500;
-    font-size: 3.6rem;
-    color: $dark-blue;
-  }
 }
 
 @keyframes rotation {

@@ -2,126 +2,42 @@
 @use "../../../style/mixin" as *;
 
 header {
-  @include flex();
+  @include flex($align: center, $justify: center);
 
   inline-size: 100%;
 
-  padding: 0.6rem;
+  background-color: hsl(0, 0%, 100%);
 
-  background: $white;
+  box-shadow: 0 0.5rem 1.4rem 0 hsla(241, 37%, 12%, 0.05);
 
-  box-shadow: 0 0.5rem 1.4rem $grey;
+  div.container {
+    @include flex($align: center, $justify: space-evenly);
 
-  position: relative;
-  z-index: 3;
-
-  div {
-    @include flex();
-    gap: 8rem;
-
-    @include width();
-
-    .menu-icon {
-      @include flex();
-
-      display: none;
-
-      background-color: $transparent;
-
-      border: 0;
-
-      font-size: 2.4rem;
-    }
+    inline-size: min(100%, 102.4rem);
 
     img {
-      inline-size: 5.6rem;
-      block-size: 5.6rem;
-
-      &.right {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-      }
+      block-size: 4.8rem;
+      inline-size: 4.8rem;
     }
 
     ul {
-      @include flex();
+      @include flex($gap: 4rem);
 
-      li a {
-        display: inline-block;
-
-        padding: 2rem 3rem;
-
-        font-size: 1.6rem;
-        font-weight: 500;
+      li {
+        font-size: 1.4rem;
+        color: hsl(0, 0%, 0%);
       }
     }
-  }
 
-  div.noMenu {
-    justify-content: flex-start;
+    a.login-btn {
+      padding: 0.8rem 1.6rem;
 
-    padding-inline-start: 15rem;
-  }
-}
+      background-image: linear-gradient(to bottom, hsl(230, 53%, 23%), hsl(220, 48%, 14%));
 
-div.dark {
+      border-radius: 0.4rem;
 
-  position: absolute;
-  inset-block-start: 0;
-  inset-block-end: 0;
-  inset-inline-start: 0;
-  inset-inline-end: 0;
-
-  background-color: $grey-transparent;
-
-  z-index: 1;
-  display: none;
-}
-
-@media only screen and (max-width: 992px) {
-  header {
-
-    &.show {
-      position: fixed;
+      font-size: 1.2rem;
+      color: hsl(0, 0%, 100%);
     }
-
-    .menu-icon {
-      display: block !important;
-    }
-
-    .hasMenu {
-      justify-content: space-between;
-    }
-
-    .leftmenu {
-      flex-direction: column !important;
-
-      block-size: calc(100vh - 7.4rem);
-
-      background-color: $white;
-
-      position: absolute;
-      inset-block-start: 7.4rem;
-      inset-inline-start: -20rem;
-
-      box-shadow: -1.4rem 0.5rem 1.4rem $grey;
-
-      z-index: 2;
-
-      transition: 0.25s linear;
-
-      &.show {
-        inset-inline-start: 0;
-        transition: 0.25s linear;
-
-      }
-    }
-  }
-
-  div.show {
-    display: block;
-
-    position: fixed;
   }
 }

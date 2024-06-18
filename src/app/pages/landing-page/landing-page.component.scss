@@ -84,6 +84,8 @@ main {
               }
 
               img {
+                border-radius: 50%;
+
                 &.no-blur {
                   animation: rotation 5s infinite linear;
                 }

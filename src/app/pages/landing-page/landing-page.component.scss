@@ -10,47 +10,45 @@ app-header {
 }
 
 main {
-  @include flex($direction: column, $justify: center);
+  @include flex($direction: column, $justify: center, $gap: 2rem);
+  overflow-x: hidden;
+
+  position: relative;
+
+  div.box {
+    inline-size: 20%;
+    block-size: 20%;
+
+    position: absolute;
+
+    transition: 4s;
+
+    div {
+      inline-size: 100%;
+      block-size: 100%;
+
+      &:first-child {
+        background-image: linear-gradient(to top right, hsla(212, 100%, 50%, 0.5), hsla(202, 100%, 50%, 0));
+
+        filter: blur(15rem);
+      }
+
+      &:last-child {
+        background-image: linear-gradient(to top, hsla(263, 100%, 50%, 0.8), hsla(180, 100%, 50%, 0));
+
+        position: absolute;
+        inset: 0;
+
+        filter: blur(20rem);
+      }
+    }
+  }
 
   section {
     &.banner {
       @include flex($align: center, $justify: center);
 
-      inline-size: 97vw;
-      overflow: hidden;
-
-      position: relative;
-
       div {
-        &.box {
-          inline-size: 20%;
-          block-size: 20%;
-
-          position: absolute;
-
-          transition: 4s;
-
-          div {
-            inline-size: 100%;
-            block-size: 100%;
-
-            &:first-child {
-              background-image: linear-gradient(to top right, hsl(212, 100%, 50%), hsla(202, 100%, 50%, 0));
-
-              filter: blur(15rem);
-            }
-
-            &:last-child {
-              background-image: linear-gradient(to top, hsl(263, 100%, 50%), hsla(180, 100%, 50%, 0));
-
-              position: absolute;
-              inset: 0;
-
-              filter: blur(20rem);
-            }
-          }
-        }
-
         &.container {
           @include flex($direction: column, $align: center, $justify: center);
 
@@ -103,7 +101,100 @@ main {
     }
 
     &#module {
+      @include flex($justify: flex-start, $direction: column, $gap: 2rem);
+      padding-block-start: 10rem;
+
       block-size: 100vh;
+      inline-size: 100%;
+
+      & > div {
+        @include flex($direction: column);
+
+        inline-size: 100%;
+
+        &:first-child {
+          @include flex($justify: center, $gap: 8rem);
+          inline-size: 100%;
+          font-size: 2rem;
+
+          padding-block-end: 3rem;
+
+          & > div {
+            @include flex();
+
+            position: relative;
+
+            img:last-child {
+              position: absolute;
+              inset-block-start: -2.6rem;
+            }
+          }
+        }
+
+        ul {
+          @include flex($gap: 3rem);
+          z-index: 2;
+
+          li {
+            @include flex($direction: column);
+            font-size: 1.6rem;
+
+            transition: 0.25ms;
+
+            &.selected {
+              img {
+                position: relative;
+                inset-block-start: -1.2rem;
+              }
+
+              p {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+
+        div.box{
+          background-color: white;
+          block-size: 8rem;
+          inline-size: min(100%, 80rem);
+          position: relative;
+          inset-block-start: -6rem;
+          border-radius: 0.8rem;
+          box-shadow: 0 2.4rem 4rem 0 hsla(236, 8%, 41%, 0.08);
+        }
+
+        div.description {
+          @include flex($direction: column, $align: flex-start, $gap: 1rem);
+          inline-size: min(100%, 102.4rem);
+
+          span.title {
+            position: relative;
+            @include flex($align: flex-end, $justify: center);
+
+            h3 {
+              font-size: 2.4rem;
+
+              &:first-child {
+                position: absolute;
+              }
+
+              &:last-child{
+                font-family: Playfair, serif;
+                font-size: 4rem;
+
+                background: linear-gradient(to bottom, #C4C4C4, white);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+              }
+            }
+          }
+
+          p {
+            font-size: 1.6rem;
+          }
+        }
+      }
     }
   }
 

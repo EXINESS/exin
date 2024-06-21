@@ -1,16 +1,17 @@
 <app-header [menu]="menu"></app-header>
 
 <main>
-  <section class="banner">
-    <div class="box" #boxOne>
-      <div></div>
-      <div></div>
-    </div>
+  <div class="box" #boxOne>
+    <div></div>
+    <div></div>
+  </div>
 
-    <div class="box" #boxTwo>
-      <div></div>
-      <div></div>
-    </div>
+  <div class="box" #boxTwo>
+    <div></div>
+    <div></div>
+  </div>
+
+  <section class="banner">
 
     <div class="container">
       <div class="content">
@@ -42,6 +43,65 @@
   </section>
 
   <section id="module">
+    <div>
+      <p>به تناسب نیازهای هــر فرد</p>
 
+      <div>
+        <img ngSrc="assets/image/Light.webp" alt="white box" width="130" height="169" priority="1">
+        <img ngSrc="assets/image/grey-exiness.webp" alt="exiness" height="207" width="207" priority="1">
+      </div>
+
+      <p>یک راه حــل منحصر به فرد</p>
+    </div>
+
+    <div>
+      <ul>
+        <li (click)="changeModule(0)" [class]="selectedModule === 0 ? 'selected' : ''">
+          <img ngSrc="assets/image/Purple.webp" alt="white box" width="70" height="91" priority="1">
+          <p>Vision</p>
+        </li>
+
+        <li (click)="changeModule(1)" [class]="selectedModule === 1 ? 'selected' : ''">
+          <img ngSrc="assets/image/Teal.webp" alt="white box" width="70" height="91" priority="1">
+          <p>Mission</p>
+        </li>
+
+        <li (click)="changeModule(2)" [class]="selectedModule === 2 ? 'selected' : ''">
+          <img ngSrc="assets/image/Yellow.webp" alt="white box" width="70" height="91" priority="1">
+          <p>Action</p>
+        </li>
+
+        <li (click)="changeModule(3)" [class]="selectedModule === 3 ? 'selected' : ''">
+          <img ngSrc="assets/image/Orange.webp" alt="white box" width="70" height="91" priority="1">
+          <p>Dashboard</p>
+        </li>
+
+        <li (click)="changeModule(4)" [class]="selectedModule === 4 ? 'selected' : ''">
+          <img ngSrc="assets/image/Blue.webp" alt="white box" width="70" height="91" priority="1">
+          <p>Option</p>
+        </li>
+
+        <li (click)="changeModule(5)" [class]="selectedModule === 5 ? 'selected' : ''">
+          <img ngSrc="assets/image/Green.webp" alt="white box" width="70" height="91" priority="1">
+          <p>ChatBot</p>
+        </li>
+
+        <li (click)="changeModule(6)" [class]="selectedModule === 6 ? 'selected' : ''">
+          <img ngSrc="assets/image/Red.webp" alt="white box" width="70" height="91" priority="1">
+          <p>Store</p>
+        </li>
+      </ul>
+
+      <div class="box"></div>
+
+      <div class="description">
+        <span class="title">
+          <h3>{{faTitle[selectedModule]}}</h3>
+          <h3>{{enTitle[selectedModule]}}</h3>
+        </span>
+
+        <p>{{description[selectedModule]}}</p>
+      </div>
+    </div>
   </section>
 </main>

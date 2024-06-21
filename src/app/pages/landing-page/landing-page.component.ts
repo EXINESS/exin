@@ -19,7 +19,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.intervalId = setInterval(() => {
       this.renderer.setStyle(this.boxOne.nativeElement, 'inset-inline-start', Math.floor(Math.random() * 90) + 'vw');
-      this.renderer.setStyle(this.boxOne.nativeElement, 'inset-block-end', Math.floor(Math.random() * 90) + 'vh');
+      this.renderer.setStyle(this.boxOne.nativeElement, 'inset-block-start', Math.floor(Math.random() * 60) + 'vh');
 
       this.renderer.setStyle(this.boxTwo.nativeElement, 'inset-inline-start', Math.floor(Math.random() * 90) + 'vw');
       this.renderer.setStyle(this.boxTwo.nativeElement, 'inset-block-start', Math.floor(Math.random() * 90) + 'vh');
@@ -37,4 +37,13 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     {id: 3, title: "درباره ما", link: '/'},
     {id: 4, title: "درخواست مشاوره", link: '/'},
   ];
+
+  public selectedModule: number = 0;
+  public enTitle = ['Vision', 'Mission', 'Action', 'Dashboard', 'Option', 'ChatBot', 'Store'];
+  public faTitle = ['چشم انداز', 'ماموریت', 'اقدام', 'میزکار', 'گزینه', 'چت بات', 'فروشگاه'];
+  public description = ['متن یک', 'متن دو', 'متن سه', 'متن چهار', 'متن پنج', 'متن شش', 'متن هفت'];
+
+  changeModule(index: number) {
+    this.selectedModule = index;
+  }
 }

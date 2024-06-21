@@ -19,6 +19,11 @@ main {
     inline-size: 20%;
     block-size: 20%;
 
+    @media screen and (max-width: 767px) {
+      inline-size: 25rem;
+      block-size: 25rem;
+    }
+
     position: absolute;
 
     transition: 4s;
@@ -47,18 +52,23 @@ main {
   section {
     &.banner {
       @include flex($align: center, $justify: center);
+      block-size: 100dvh;
+      inline-size: min(95%, 102.4rem);
 
       div {
         &.container {
           @include flex($direction: column, $align: center, $justify: center);
 
-          block-size: 100vh;
-          inline-size: min(95%, 102.4rem);
+          inline-size: 100%;
+          block-size: 100%;
 
           position: relative;
 
           div.content {
             @include flex($direction: column, $gap: 2rem);
+
+            position: relative;
+            inset-block-start: -2rem;
 
             h1 {
               color: hsl(220, 48%, 14%);
@@ -104,7 +114,6 @@ main {
       @include flex($justify: flex-start, $direction: column, $gap: 2rem);
       padding-block-start: 10rem;
 
-      block-size: 100vh;
       inline-size: 100%;
 
       & > div {
@@ -118,6 +127,14 @@ main {
           font-size: 2rem;
 
           padding-block-end: 3rem;
+
+          @media screen and (max-width: 767px) {
+            flex-wrap: wrap;
+            &>*{
+              inline-size: 100%;
+            }
+
+          }
 
           & > div {
             @include flex();
@@ -141,6 +158,8 @@ main {
 
             transition: 0.25ms;
 
+            cursor: pointer;
+
             &.selected {
               img {
                 position: relative;
@@ -154,7 +173,7 @@ main {
           }
         }
 
-        div.box{
+        div.box {
           background-color: white;
           block-size: 8rem;
           inline-size: min(100%, 80rem);
@@ -166,7 +185,7 @@ main {
 
         div.description {
           @include flex($direction: column, $align: flex-start, $gap: 1rem);
-          inline-size: min(100%, 102.4rem);
+          inline-size: min(95%, 102.4rem);
 
           span.title {
             position: relative;
@@ -179,7 +198,7 @@ main {
                 position: absolute;
               }
 
-              &:last-child{
+              &:last-child {
                 font-family: Playfair, serif;
                 font-size: 4rem;
 
@@ -196,8 +215,150 @@ main {
         }
       }
     }
-  }
 
+    &.invite {
+      @include flex($direction: column);
+      padding-block-start: 3rem;
+
+      span.title {
+        position: relative;
+        @include flex($align: flex-end, $justify: center);
+
+        h3 {
+          font-size: 2.8rem;
+
+          &:first-child {
+            position: absolute;
+            font-size: 2.1rem;
+          }
+
+          &:last-child {
+            font-family: Playfair, serif;
+            font-size: 4rem;
+
+            background: linear-gradient(to bottom, #C4C4C4, white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+
+      div.card-back {
+        @include flex();
+        position: relative;
+
+        inline-size: min(102.4rem, 95%);
+
+        img.card {
+          inline-size: 100% !important;
+          block-size: inherit !important;
+        }
+
+        div.title {
+          p {
+            font-size: 1.6rem;
+
+            &:first-child {
+              font-weight: bold;
+            }
+          }
+        }
+
+        form {
+          @include flex($gap: 1rem);
+          block-size: calc(100% - 20rem);
+          inline-size: calc(100% - 20rem);
+          position: absolute;
+
+          .box-card {
+            @include flex($direction: column, $justify: flex-start, $align: flex-start, $gap: 1.3rem);
+            padding-block-start: 5% !important;
+            inline-size: 100%;
+            block-size: 100%;
+
+            padding: 1rem;
+
+            &:first-child {
+              flex: 2;
+              @include flex($justify: space-evenly, $direction: column);
+
+              padding: 1rem !important;
+
+              p {
+                font-size: 1.6rem;
+                font-weight: bold;
+              }
+            }
+
+            &:nth-child(2) {
+              flex: 7;
+              padding-inline-end: 10%;
+            }
+          }
+
+          .row {
+            @include flex($gap: 1rem);
+            inline-size: 100%;
+
+            div {
+              flex: 1;
+              @include flex($align: flex-start, $direction: column);
+
+              label {
+                padding-block-start: 1.4rem;
+
+                color: $light-black;
+                font-size: 1.4rem;
+              }
+
+              input {
+                block-size: 4.2rem;
+                inline-size: 100%;
+
+                background-color: $light-white;
+
+                border-radius: 1rem;
+                border: 0.2rem solid $light-grey;
+
+                padding: 0.25rem 1rem;
+
+
+                &:focus-visible {
+                  outline-color: $blue;
+                }
+
+                &:invalid {
+                  outline-color: $red;
+                }
+              }
+
+            }
+          }
+
+          div.submit {
+            position: absolute;
+            inset-inline-end: -6rem;
+            @include flex();
+
+            img {
+              position: absolute;
+            }
+
+            button {
+              block-size: 10rem;
+              inline-size: 10rem;
+              border-radius: 50%;
+              z-index: 1;
+              background-color: #1B2559;
+              border: 0;
+              color: white;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @keyframes rotation {

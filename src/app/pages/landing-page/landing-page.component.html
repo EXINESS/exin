@@ -104,4 +104,59 @@
       </div>
     </div>
   </section>
+
+  <section class="invite">
+    <span class="title">
+      <h3>دعوت نامه اکسین</h3>
+      <h3>EXINESS</h3>
+    </span>
+
+    <div class="card-back">
+      <img class="card" ngSrc="assets/image/card.webp" alt="card" width="850" height="360">
+
+      <form (ngSubmit)="submitform()">
+        <div class="box-card">
+          <p>EXIN Number</p>
+          <img ngSrc="assets/image/EXIN.webp" alt="exin" width="100" height="100">
+        </div>
+
+        <div class="box-card">
+          <div class="title">
+            <p>دعوت نامه اکسین</p>
+
+            <p>مفتخریم که از حضور شما به استفاده از برنامه دعوت کنیم</p>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="firstname">نام</label>
+              <input id="firstname" type="text" name="firstname" [(ngModel)]="firstname" required>
+            </div>
+
+            <div>
+              <label for="lastname">نام خانوادگی</label>
+              <input id="lastname" type="text" name="lastname" [(ngModel)]="lastname" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="phone">شماره تلفن</label>
+              <input id="phone" type="phone" name="phone" [(ngModel)]="phone" required>
+            </div>
+
+            <div>
+              <label for="email">ایمیل</label>
+              <input id="email" type="email" name="email" [(ngModel)]="email" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="submit">
+          <img ngSrc="assets/image/grey-exiness.webp" alt="exiness" height="160" width="160" priority="1">
+          <button type="submit" >رزرو میکنم</button>
+        </div>
+      </form>
+    </div>
+  </section>
 </main>

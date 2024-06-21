@@ -46,4 +46,12 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   changeModule(index: number) {
     this.selectedModule = index;
   }
+
+  public firstname = "";
+  public lastname = "";
+  public phone = "";
+  public email = "";
+  public submitform () {
+    console.log(this.firstname, this.lastname, this.phone, this.email);
+  };
 }

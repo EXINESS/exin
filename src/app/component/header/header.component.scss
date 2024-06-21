@@ -13,6 +13,12 @@ header {
   div.container {
     @include flex($align: center, $justify: space-evenly);
 
+    @media screen and (max-width: 767px) {
+      @include flex($align: center, $justify: space-between);
+
+      padding: 0 2rem;
+    }
+
     inline-size: min(100%, 102.4rem);
 
     img {
@@ -22,6 +28,10 @@ header {
 
     ul {
       @include flex($gap: 4rem);
+
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
 
       li {
         font-size: 1.4rem;

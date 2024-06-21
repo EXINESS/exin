@@ -2,10 +2,11 @@
   inline-size: min(95%, 102.4rem);
 }
 
-@mixin flex($justify: center, $align: center, $direction: row, $gap: 0) {
+@mixin flex($justify: center, $align: center, $direction: row, $gap: 0, $wrap: nowrap) {
   display: flex;
   flex-direction: $direction;
   align-items: $align;
   justify-content: $justify;
   gap: $gap;
+  flex-wrap: $wrap;
 }

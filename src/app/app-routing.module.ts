@@ -1,18 +1,18 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {LoginPageComponent} from "./pages/login-page/login-page.component";
-import {DashboardPageComponent} from "./pages/dashboard-page/dashboard-page.component";
-import {LandingPageComponent} from "./pages/landing-page/landing-page.component";
-import {PdpReportPageComponent} from "./pages/pdp-report-page/pdp-report-page.component";
-import {PdpDesktopPageComponent} from "./pages/pdp-desktop-page/pdp-desktop-page.component";
+import {LoginComponent} from "./pages/login-page/login.component";
+import {DashboardComponent} from "./pages/dashboard/dashboard.component";
+import {LandingComponent} from "./pages/landing/landing.component";
+import {PdpReportComponent} from "./pages/pdp-report/pdp-report.component";
+import {PdpDesktopComponent} from "./pages/pdp-desktop/pdp-desktop.component";
 import {authGuard} from "./guard/auth.guard";
 
 export const routes: Routes = [
-  {path: '', pathMatch: 'full', component: LandingPageComponent},
-  {path: 'login', component: LoginPageComponent},
-  {path: 'dashboard', component: DashboardPageComponent, canActivate: [authGuard]},
-  {path: 'pdp/report', component: PdpReportPageComponent, canActivate: [authGuard]},
-  {path: 'pdp/desktop', component: PdpDesktopPageComponent, canActivate: [authGuard]},
+  {path: '', pathMatch: 'full', component: LandingComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [authGuard]},
+  {path: 'pdp/report', component: PdpReportComponent, canActivate: [authGuard]},
+  {path: 'pdp/desktop', component: PdpDesktopComponent, canActivate: [authGuard]},
 ];
 
 @NgModule({

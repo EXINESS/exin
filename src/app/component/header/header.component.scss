@@ -2,24 +2,81 @@
 @use "../../../style/mixin" as *;
 
 header {
-  @include flex($align: center, $justify: center);
+  @include flex();
 
+  block-size: 5.5rem;
   inline-size: 100%;
 
-  background-color: hsl(0, 0%, 100%);
+  background-color: $white;
 
   box-shadow: 0 0.5rem 1.4rem 0 hsla(241, 37%, 12%, 0.05);
 
-  div.container {
-    @include flex($align: center, $justify: space-evenly);
+  @include respond-to($tablet-size) {
+    @include flex($justify: flex-start);
 
-    @media screen and (max-width: 767px) {
-      @include flex($align: center, $justify: space-between);
+    background-color: $transparent;
 
-      padding: 0 2rem;
+    padding-inline-start: 1.5rem;
+
+    box-shadow: none;
+  }
+
+  button {
+    @include flex();
+
+    background-color: $transparent;
+
+    display: none;
+
+    border: 0;
+
+    cursor: pointer;
+
+    @include respond-to($tablet-size) {
+      display: block;
     }
+  }
+
+  div.container {
+    @include flex($justify: space-evenly);
 
     inline-size: min(100%, 102.4rem);
+
+    @include respond-to($tablet-size) {
+      display: none;
+
+      &.show {
+        @include flex($justify: space-between, $direction: column);
+
+        background-color: $white;
+
+        padding: 3rem 0;
+
+        position: fixed;
+        inset: 0 0 0 50%;
+
+        z-index: 999;
+
+        button {
+          position: absolute;
+          inset-block-start: 1.2rem;
+          inset-inline-end: 1.2rem;
+
+          svg {
+            transform: rotate(40deg);
+          }
+        }
+
+        img {
+          block-size: 6rem;
+          inline-size: 6rem;
+        }
+
+        ul {
+          flex-direction: column;
+        }
+      }
+    }
 
     img {
       block-size: 4.8rem;
@@ -29,25 +86,21 @@ header {
     ul {
       @include flex($gap: 4rem);
 
-      @media screen and (max-width: 767px) {
-        display: none;
-      }
-
       li {
         font-size: 1.4rem;
-        color: hsl(0, 0%, 0%);
+        color: $black;
       }
     }
 
     a.login-btn {
-      padding: 0.8rem 1.6rem;
+      background-image: linear-gradient(to bottom, $light-dark-blue, $dark-blue);
 
-      background-image: linear-gradient(to bottom, hsl(230, 53%, 23%), hsl(220, 48%, 14%));
+      padding: 0.8rem 1.6rem;
 
       border-radius: 0.4rem;
 
       font-size: 1.2rem;
-      color: hsl(0, 0%, 100%);
+      color: $white;
     }
   }
 }

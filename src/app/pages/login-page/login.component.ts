@@ -4,10 +4,10 @@ import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrl: './login-page.component.scss'
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.scss'
 })
-export class LoginPageComponent {
+export class LoginComponent {
 
   constructor(private router: Router, private data: AuthService) {
   }
@@ -24,7 +24,7 @@ export class LoginPageComponent {
     this.isLogin = true;
     this.isLoading = true;
 
-    this.data.login({username: this.email, password: this.password}).subscribe((response) => {
+    this.data.login({username: this.email, password: this.password}).subscribe(() => {
         this.isLogin = false;
         this.isLoading = false;
         this.router.navigate(['/dashboard']).then();

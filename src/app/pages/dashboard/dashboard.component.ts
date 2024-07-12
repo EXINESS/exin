@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import {menuItem} from "../../component/models/menuItem";
 
 @Component({
-  selector: 'app-dashboard-page',
-  templateUrl: './dashboard-page.component.html',
-  styleUrl: './dashboard-page.component.scss'
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.scss'
 })
-export class DashboardPageComponent {
+export class DashboardComponent {
   public menu: menuItem[] = [
     {id: 0, title: "اشتراک ویژه", link: '/'},
     {id: 1, title: "افزونه‌ها", link: '/'},

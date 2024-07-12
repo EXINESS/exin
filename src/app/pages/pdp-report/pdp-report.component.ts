@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {menuItem} from "../../component/models/menuItem";
 
 @Component({
-  selector: 'app-pdp-report-page',
-  templateUrl: './pdp-report-page.component.html',
-  styleUrl: './pdp-report-page.component.scss'
+  selector: 'app-pdp-report',
+  templateUrl: './pdp-report.component.html',
+  styleUrl: './pdp-report.component.scss'
 })
-export class PdpReportPageComponent implements OnInit {
+export class PdpReportComponent implements OnInit {
   constructor() {
   }
 
@@ -21,11 +21,11 @@ export class PdpReportPageComponent implements OnInit {
   taskNumber:{total: number, success: number}[] = [];
 
   ngOnInit(): void {
-    let w = localStorage.getItem('works');
+    const w = localStorage.getItem('works');
     if (w == null)
       return;
     this.works = JSON.parse(w);
-    for (let i in this.works) {
+    for (const i in this.works) {
       this.showlist.push(false);
       let s= 0;
       for(let j = 0; j < this.works[i].subtask.length; j++){
@@ -34,7 +34,7 @@ export class PdpReportPageComponent implements OnInit {
           s++;
         }
       }
-      let total = this.works[i].subtask.length;
+      const total = this.works[i].subtask.length;
       this.taskNumber.push({total: total, success: s});
     }
   }

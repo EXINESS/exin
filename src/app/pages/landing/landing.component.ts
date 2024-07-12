@@ -2,12 +2,12 @@ import {Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild} from '@a
 import {menuItem} from "../../component/models/menuItem";
 
 @Component({
-  selector: 'app-landing-page',
-  templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss'
+  selector: 'app-landing',
+  templateUrl: './landing.component.html',
+  styleUrl: './landing.component.scss'
 })
 
-export class LandingPageComponent implements OnInit, OnDestroy {
+export class LandingComponent implements OnInit, OnDestroy {
   @ViewChild('boxOne') boxOne!: ElementRef;
   @ViewChild('boxTwo') boxTwo!: ElementRef;
 

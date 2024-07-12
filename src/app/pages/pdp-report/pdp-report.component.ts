@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {menuItem} from "../../component/models/menuItem";
 
 @Component({
-  selector: 'app-pdp-report-page',
-  templateUrl: './pdp-report-page.component.html',
-  styleUrl: './pdp-report-page.component.scss'
+  selector: 'app-pdp-report',
+  templateUrl: './pdp-report.component.html',
+  styleUrl: './pdp-report.component.scss'
 })
-export class PdpReportPageComponent implements OnInit {
+export class PdpReportComponent implements OnInit {
   constructor() {
   }
 

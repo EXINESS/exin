@@ -4,10 +4,10 @@ import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrl: './login-page.component.scss'
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.scss'
 })
-export class LoginPageComponent {
+export class LoginComponent {
 
   constructor(private router: Router, private data: AuthService) {
   }

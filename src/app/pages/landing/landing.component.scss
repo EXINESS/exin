@@ -1,14 +1,6 @@
 @use "../../../style/mixin" as *;
 @use "../../../style/variable" as *;
 
-app-header {
-  position: fixed;
-  inset-inline: 0;
-  inset-block-start: 0;
-
-  z-index: 999;
-}
-
 main {
   @include flex($direction: column, $justify: center, $gap: 2rem);
   overflow-x: hidden;

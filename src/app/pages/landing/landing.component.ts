@@ -53,5 +53,5 @@ export class LandingComponent implements OnInit, OnDestroy {
   public email = "";
   public submitform () {
     console.log(this.firstname, this.lastname, this.phone, this.email);
-  };
+  }
 }

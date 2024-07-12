@@ -22,11 +22,11 @@ export class PdpDesktopComponent implements OnInit {
     saveId: number = 0;
 
     ngOnInit(): void {
-        let w: string | null = localStorage.getItem('works');
+        const w: string | null = localStorage.getItem('works');
         if (w == null)
             return;
         this.works = JSON.parse(w);
-        for (let i in this.works) {
+        for (const i in this.works) {
             this.showlist.push(false);
         }
     }

@@ -13,7 +13,7 @@ export class HeaderComponent {
 
   public identify(index: number, item: menuItem): number {
     return item.id;
-  };
+  }
 
   public showMenu(): void {
     this.isShow = !this.isShow;

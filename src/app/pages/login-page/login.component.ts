@@ -24,7 +24,7 @@ export class LoginComponent {
     this.isLogin = true;
     this.isLoading = true;
 
-    this.data.login({username: this.email, password: this.password}).subscribe((response) => {
+    this.data.login({username: this.email, password: this.password}).subscribe(() => {
         this.isLogin = false;
         this.isLoading = false;
         this.router.navigate(['/dashboard']).then();
